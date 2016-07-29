@@ -1,0 +1,5 @@
+junit:1.6
+token-macro:1.1
+javadoc:1.0
+mailer:1.7
+maven-plugin:2.13
