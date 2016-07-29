@@ -10,3 +10,7 @@ Le script n'étant pas transitif il faut [lister l'ensemble des dépendances](ht
 
 ## Maven Integration Plugin
 [Ce plugin](https://wiki.jenkins-ci.org/display/JENKINS/Maven+Project+Plugin) permet de créer des jobs de type projet *maven*.
+
+
+# Configuration de Jenkins
+Pour configurer Maven, JDK, etc. il faut, depuis la version 2.x de *jenkins* aller dans [Global Tools](http://stackoverflow.com/questions/37391778/maven-installation-settings-not-showing-in-jenkins)
