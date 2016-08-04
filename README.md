@@ -14,3 +14,12 @@ Le script n'étant pas transitif il faut [lister l'ensemble des dépendances](ht
 
 # Configuration de Jenkins
 Pour configurer Maven, JDK, etc. il faut, depuis la version 2.x de *jenkins* aller dans [Global Tools](http://stackoverflow.com/questions/37391778/maven-installation-settings-not-showing-in-jenkins)
+
+# Autoriser l'accès au port 4243 de docker
+https://www.digitalocean.com/community/tutorials/how-to-dockerise-and-deploy-multiple-wordpress-applications-on-ubuntu
+
+# Créer un esclave
+1. Créer un droplet sur *DigitalOcean* en précisant la clé ssh à utiliser (qui sera la clé du root);
+1. Se connecter à la droplet avec le root
+    ssh root@IP_DROPLET
+1. Si la clé ssh est
