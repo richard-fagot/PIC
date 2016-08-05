@@ -21,10 +21,17 @@ https://www.digitalocean.com/community/tutorials/how-to-dockerise-and-deploy-mul
 # Créer un esclave
 1. Créer un droplet sur *DigitalOcean* en précisant la clé ssh à utiliser (qui sera la clé du root);
 1. Se connecter à la droplet avec le root
+
     ssh root@IP_DROPLET
+
 1. Si la clé ssh a un nom différent de *id_rsa* utiliser la commande :
+
     ssh -i NOM_CLE_SSH root@IP_DROPLET
-1. Créer un utilisateur *jenkins-slave*
+
+1. Créer un utilisateur *jenkins-slave* :
+
+      $ adduser jenkins-slave
+      
 1. Se loguer avec l'utilisateur *jenkins-slave*
 1. Créer un répertoire */home/jenkins-slave/jenkins_slave_home*
 1. Créer un couple clé privée/clé publique
@@ -33,7 +40,7 @@ https://www.digitalocean.com/community/tutorials/how-to-dockerise-and-deploy-mul
 1. Dans le *jenkins* maître :
    2. **Administrer jenkins > Gérer les noeuds > Créer un noeud**,
    2. Nommer le noeud *jenkins_slave*,
-   2. Sélectionner **Permanent agent > OK**,
+   2. Sélectionner **Permanent agent** puis **OK**,
    2. **Nombre d'exécuteurs** : 1,
    2. **Répertoire de travail du système distant** : */home/jenkins-slave/jenkins_slave_home*,
    2. **Méthode de lancement** : *Launch slave agents on Unix machines via SSH*,
