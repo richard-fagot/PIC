@@ -19,19 +19,31 @@ Pour configurer Maven, JDK, etc. il faut, depuis la version 2.x de *jenkins* all
 https://www.digitalocean.com/community/tutorials/how-to-dockerise-and-deploy-multiple-wordpress-applications-on-ubuntu
 
 # Créer un esclave
-1. Créer un droplet sur *DigitalOcean* en précisant la clé ssh à utiliser (qui sera la clé du root);
-1. Se connecter à la droplet avec le root
+1. Créer un droplet sur *DigitalOcean* en précisant la clé ssh à utiliser (qui sera la clé du root) :
 
-    ssh root@IP_DROPLET
+```bash
+    curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer **LICENCE_KEY**"
+     -d '{"name":"jenkins-slave", "region":"fra1", "size":"512mb", "image":"ubuntu-16-04-x64"
+     ,"ssh_keys":["**SSH_FINGERPRINT**"], "backups":false, "ipv6":false,
+     "user_data":null, "private_networking":null, "volumes": null}' "https://api.digitalocean.com/v2/droplets"   
+```
 
-1. Si la clé ssh a un nom différent de *id_rsa* utiliser la commande :
+1. **SI** la clé SSH a un nom différent de *id_rsa* utiliser la commande suivante pour se connecter en _root_ sur le droplet :
 
+ ```bash
     ssh -i NOM_CLE_SSH root@IP_DROPLET
+```
+
+1. **SINON** Se connecter à la droplet avec _root_ simplement :
+
+ ```bash
+    ssh root@IP_DROPLET
+```
 
 1. Créer un utilisateur *jenkins-slave* :
 
       $ adduser jenkins-slave
-      
+
 1. Se loguer avec l'utilisateur *jenkins-slave*
 1. Créer un répertoire */home/jenkins-slave/jenkins_slave_home*
 1. Créer un couple clé privée/clé publique
